@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Site - Sobre o Autor</title>
+</head>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="detalhes.html">Detalhes</a></li>
+            <li><a href="sobre.html">Sobre o Autor</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Sobre o Autor</h2>
+        <p>Nome: SEU NOME</p>
+        <p>Sobre mim: escreva 3 linhas sobre você.</p>
+    </main>
+    <footer>
+        <p>Feito por: PEDRO </p>
+        <a href="sobre.html">Sobre o autor</a>
+    </footer>
+</body>
+</html>

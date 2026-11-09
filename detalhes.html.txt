@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Site - Detalhes</title>
+</head>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="detalhes.html">Detalhes</a></li>
+            <li><a href="sobre.html">Sobre o Autor</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Detalhes do Objeto</h2>
+        <p>Nome: Objeto 1</p>
+        <p>Descrição completa aqui</p>
+        <a href="index.html">Voltar</a>
+    </main>
+    <footer>
+        <p>Feito por: PEDRO </p>
+        <a href="sobre.html">Sobre o autor</a>
+    </footer>
+</body>
+</html>
