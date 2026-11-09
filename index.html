@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Meu Site - Início</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Site</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#e6fffa;color:#064e3b}
+header{background:#064e3b;color:white;padding:20px;text-align:center}
+header h1{margin:0}
+nav{background:#2dd4bf;padding:12px;text-align:center}
+nav a{color:#064e3b;text-decoration:none;font-weight:bold;margin:0 15px;font-size:18px}
+.container{max-width:700px;margin:30px auto;background:white;padding:30px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);text-align:center}
+h2{color:#064e3b}
+.btn{display:inline-block;background:#2dd4bf;color:#064e3b;padding:12px 25px;border-radius:30px;text-decoration:none;font-weight:bold;margin-top:15px}
+.btn:hover{background:#064e3b;color:white}
+footer{text-align:center;padding:20px;color:#065f46}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Meu Site</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="detalhes.html">Detalhes</a></li>
-            <li><a href="sobre.html">Sobre o Autor</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h2>Coleção</h2>
-        <article>
-            <h3>Objeto 1</h3>
-            <p>Descrição do objeto 1</p>
-            <a href="detalhes.html">Ver detalhes</a>
-        </article>
-    </main>
-    <footer>
-        <p>Feito por: PEDRO </p>
-        <a href="sobre.html">Sobre o autor</a>
-    </footer>
+<header><h1>Meu Site</h1><p>Feito por: PEDRO</p></header>
+<nav><a href="index.html">Início</a><a href="detalhes.html">Detalhes</a><a href="sobre.html">Sobre o Autor</a></nav>
+<div class="container">
+<h2>Objeto 1</h2>
+<p>Seja bem-vindo ao meu site! Clique abaixo para ver os detalhes.</p>
+<a class="btn" href="detalhes.html">Ver Detalhes</a>
+</div>
+<footer>Sobre o autor - <a href="sobre.html">Clique aqui</a></footer>
 </body>
 </html>
