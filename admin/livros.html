@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Livros</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f4f4;margin:0;padding:20px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.card{background:#fff;padding:20px;border-radius:10px;margin-top:15px;box-shadow:0 0 10px #ccc}
+input{width:100%;padding:10px;margin:6px 0;border:1px solid #ccc;border-radius:5px;box-sizing:border-box}
+button{padding:10px 15px;background:#2c3e50;color:#fff;border:none;border-radius:5px;cursor:pointer}
+button.verm{ background:#c0392b}
+.item{border-bottom:1px solid #eee;padding:10px 0;display:flex;justify-content:space-between}
+a{color:#2c3e50}
+</style>
+</head>
+<body>
+<div class="top">
+<h2>Admin - Livros</h2>
+<div><a href="usuarios.html">Usuários</a> | <a href="../index.html">Ver site</a> | <a href="#" onclick="sair()">Sair</a></div>
+</div>
 
+<div class="card">
+<h3>Adicionar livro</h3>
+<input id="titulo" placeholder="Título do livro">
+<input id="autor" placeholder="Autor">
+<input id="preco" placeholder="Preço ex: 29.90">
+<button onclick="adicionar()">Adicionar</button>
+</div>
+
+<div class="card">
+<h3>Livros cadastrados</h3>
+<div id="lista"></div>
+</div>
+
+<script>
+if(localStorage.getItem('adminLogado')!=='sim'){ window.location.href='login.html'; }
+function carregar(){
+  var livros=JSON.parse(localStorage.getItem('livros')||'[]');
+  var html='';
+  if(livros.length===0) html='<p>Nenhum livro ainda.</p>';
+  livros.forEach(function(l,i){
+    html+='<div class="item"><span><b>'+l.titulo+'</b> - '+l.autor+' - R$ '+l.preco+'</span><button class="verm" onclick="excluir('+i+')">Excluir</button></div>';
+  });
+  document.getElementById('lista').innerHTML=html;
+}
+function adicionar(){
+  var titulo=document.getElementById('titulo').value;
+  var autor=document.getElementById('autor').value;
+  var preco=document.getElementById('preco').value;
+  if(!titulo){ alert('Coloca o título'); return; }
+  var livros=JSON.parse(localStorage.getItem('livros')||'[]');
+  livros.push({titulo:titulo, autor:autor, preco:preco});
+  localStorage.setItem('livros', JSON.stringify(livros));
+  document.getElementById('titulo').value='';
+  document.getElementById('autor').value='';
+  document.getElementById('preco').value='';
+  carregar();
+}
+function excluir(i){
+  var livros=JSON.parse(localStorage.getItem('livros')||'[]');
+  livros.splice(i,1);
+  localStorage.setItem('livros', JSON.stringify(livros));
+  carregar();
+}
+function sair(){ localStorage.removeItem('adminLogado'); window.location.href='login.html'; }
+carregar();
+</script>
+</body>
+</html>
