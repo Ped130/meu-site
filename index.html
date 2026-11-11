@@ -33,5 +33,26 @@
         <p>Feito por: PEDRO </p>
         <a href="sobre.html">Sobre o autor</a>
     </footer>
+<hr>
+<h2 style="text-align:center">📚 Livros à venda</h2>
+<div id="listaLivros" style="max-width:600px;margin:0 auto;padding:20px"></div>
+
+<script>
+function mostrarLivros(){
+  var livros = JSON.parse(localStorage.getItem('livros') || '[]');
+  var div = document.getElementById('listaLivros');
+  if(!div) return;
+  if(livros.length === 0){
+    div.innerHTML = '<p style="text-align:center">Nenhum livro cadastrado ainda. <br> Cadastre no <a href="admin/login.html">painel admin</a></p>';
+    return;
+  }
+  var html = '';
+  livros.forEach(function(l){
+    html += '<div style="background:#fff;padding:15px;border-radius:10px;margin-bottom:10px;box-shadow:0 0 5px #ccc"><b>'+l.titulo+'</b><br>Autor: '+l.autor+'<br>Preço: R$ '+l.preco+'</div>';
+  });
+  div.innerHTML = html;
+}
+mostrarLivros();
+</script>
 </body>
 </html>
