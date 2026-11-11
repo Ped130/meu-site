@@ -1,1 +1,38 @@
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Login</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f4f4;display:flex;justify-content:center;align-items:center;height:100vh;margin:0}
+.box{background:#fff;padding:30px;border-radius:10px;width:300px;box-shadow:0 0 10px #ccc;text-align:center}
+input{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:5px;box-sizing:border-box}
+button{width:100%;padding:10px;background:#2c3e50;color:#fff;border:none;border-radius:5px;cursor:pointer}
+a{color:#2c3e50;font-size:13px}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Admin - Login</h2>
+<p style="font-size:13px;color:#666">Use: admin / 1234</p>
+<input id="user" placeholder="Usuário" value="admin">
+<input id="pass" type="password" placeholder="Senha" value="1234">
+<button onclick="entrar()">Entrar</button>
+<p id="msg" style="color:red;font-size:13px"></p>
+<br><a href="../index.html">← Voltar pro site</a>
+</div>
+<script>
+function entrar(){
+  var u=document.getElementById('user').value;
+  var p=document.getElementById('pass').value;
+  if(u==='admin' && p==='1234'){
+    localStorage.setItem('adminLogado','sim');
+    window.location.href='livros.html';
+  } else {
+    document.getElementById('msg').innerText='Usuário ou senha errados';
+  }
+}
+</script>
+</body>
+</html>
